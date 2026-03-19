@@ -1,0 +1,108 @@
+season,reason,count
+ALL,team2_team_unmatched:LIU Brooklyn,4
+ALL,team1_team_unmatched:LIU Brooklyn,4
+ALL,team2_team_unmatched:Sam Houston St,2
+ALL,team1_team_unmatched:Sam Houston St,2
+ALL,team2_team_unmatched:W Michigan,2
+ALL,team1_team_unmatched:W Michigan,2
+ALL,team2_team_unmatched:MS Valley St,2
+ALL,team1_team_unmatched:MS Valley St,2
+ALL,team2_team_unmatched:Morgan St,2
+ALL,team1_team_unmatched:Morgan St,2
+ALL,team1_team_unmatched:NC A&T,2
+ALL,team2_team_unmatched:NC A&T,2
+ALL,team2_team_unmatched:IL Chicago,1
+ALL,team1_team_unmatched:IL Chicago,1
+ALL,team2_team_unmatched:Coppin St,1
+ALL,team1_team_unmatched:Coppin St,1
+ALL,team2_team_unmatched:CS Northridge,1
+ALL,team1_team_unmatched:CS Northridge,1
+ALL,team2_team_unmatched:Loyola MD,1
+ALL,team1_team_unmatched:Loyola MD,1
+ALL,team2_team_unmatched:Detroit,1
+ALL,team1_team_unmatched:Detroit,1
+ALL,team2_team_unmatched:Fresno St,1
+ALL,team1_team_unmatched:Fresno St,1
+ALL,team2_team_unmatched:CS Bakersfield,1
+ALL,team1_team_unmatched:CS Bakersfield,1
+ALL,team2_team_unmatched:WI Green Bay,1
+ALL,team1_team_unmatched:WI Green Bay,1
+ALL,team2_team_unmatched:Prairie View,1
+ALL,team1_team_unmatched:Prairie View,1
+ALL,team2_team_unmatched:Kennesaw,1
+ALL,team1_team_unmatched:Kennesaw,1
+ALL,team2_team_unmatched:SIUE,1
+ALL,team1_team_unmatched:SIUE,1
+ALL,team2_team_unmatched:NE Omaha,1
+ALL,team1_team_unmatched:NE Omaha,1
+2003,team2_team_unmatched:Sam Houston St,1
+2003,team1_team_unmatched:Sam Houston St,1
+2004,team2_team_unmatched:IL Chicago,1
+2004,team1_team_unmatched:IL Chicago,1
+2004,team2_team_unmatched:W Michigan,1
+2004,team1_team_unmatched:W Michigan,1
+2008,team2_team_unmatched:Coppin St,1
+2008,team1_team_unmatched:Coppin St,1
+2008,team2_team_unmatched:MS Valley St,1
+2008,team1_team_unmatched:MS Valley St,1
+2009,team2_team_unmatched:CS Northridge,1
+2009,team1_team_unmatched:CS Northridge,1
+2009,team2_team_unmatched:Morgan St,1
+2009,team1_team_unmatched:Morgan St,1
+2010,team2_team_unmatched:Sam Houston St,1
+2010,team1_team_unmatched:Sam Houston St,1
+2010,team2_team_unmatched:Morgan St,1
+2010,team1_team_unmatched:Morgan St,1
+2011,team2_team_unmatched:LIU Brooklyn,1
+2011,team1_team_unmatched:LIU Brooklyn,1
+2012,team2_team_unmatched:MS Valley St,1
+2012,team1_team_unmatched:MS Valley St,1
+2012,team2_team_unmatched:Loyola MD,1
+2012,team1_team_unmatched:Loyola MD,1
+2012,team2_team_unmatched:Detroit,1
+2012,team1_team_unmatched:Detroit,1
+2012,team2_team_unmatched:LIU Brooklyn,1
+2012,team1_team_unmatched:LIU Brooklyn,1
+2013,team1_team_unmatched:NC A&T,2
+2013,team2_team_unmatched:NC A&T,2
+2013,team2_team_unmatched:LIU Brooklyn,1
+2013,team1_team_unmatched:LIU Brooklyn,1
+2014,team2_team_unmatched:W Michigan,1
+2014,team1_team_unmatched:W Michigan,1
+2016,team2_team_unmatched:Fresno St,1
+2016,team1_team_unmatched:Fresno St,1
+2016,team2_team_unmatched:CS Bakersfield,1
+2016,team1_team_unmatched:CS Bakersfield,1
+2016,team2_team_unmatched:WI Green Bay,1
+2016,team1_team_unmatched:WI Green Bay,1
+2018,team2_team_unmatched:LIU Brooklyn,1
+2018,team1_team_unmatched:LIU Brooklyn,1
+2019,team2_team_unmatched:Prairie View,1
+2019,team1_team_unmatched:Prairie View,1
+2023,team2_team_unmatched:Kennesaw,1
+2023,team1_team_unmatched:Kennesaw,1
+2025,team2_team_unmatched:SIUE,1
+2025,team1_team_unmatched:SIUE,1
+2025,team2_team_unmatched:NE Omaha,1
+2025,team1_team_unmatched:NE Omaha,1
+ALL,resolve:exact,4368
+ALL,resolve:normalized,1368
+ALL,resolve:fuzzy,8
+ALL,resolve:team_unmatched:LIU Brooklyn,8
+ALL,resolve:team_unmatched:Sam Houston St,4
+ALL,resolve:team_unmatched:W Michigan,4
+ALL,resolve:team_unmatched:MS Valley St,4
+ALL,resolve:team_unmatched:Morgan St,4
+ALL,resolve:team_unmatched:NC A&T,4
+ALL,resolve:team_unmatched:IL Chicago,2
+ALL,resolve:team_unmatched:Coppin St,2
+ALL,resolve:team_unmatched:CS Northridge,2
+ALL,resolve:team_unmatched:Loyola MD,2
+ALL,resolve:team_unmatched:Detroit,2
+ALL,resolve:team_unmatched:Fresno St,2
+ALL,resolve:team_unmatched:CS Bakersfield,2
+ALL,resolve:team_unmatched:WI Green Bay,2
+ALL,resolve:team_unmatched:Prairie View,2
+ALL,resolve:team_unmatched:Kennesaw,2
+ALL,resolve:team_unmatched:SIUE,2
+ALL,resolve:team_unmatched:NE Omaha,2
