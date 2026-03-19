@@ -158,6 +158,14 @@ def get_review_flag(edge_points):
     return ""
 
 
+def format_edge_display(edge_points, cap=10.0):
+    value = float(edge_points)
+    if abs(value) >= cap:
+        sign = "+" if value >= 0 else "-"
+        return f"{sign}{cap:.0f}+"
+    return f"{value:+.1f}"
+
+
 def fetch_live_odds(api_key):
     params = urlencode({
         "apiKey": api_key,
@@ -251,7 +259,7 @@ def render_live_bet_card(row, hero=False):
         st.write(row["Matchup"])
         render_metric_row("Current line", row["Current line"])
         render_metric_row("Model line", row["Model line"])
-        render_metric_row("Edge", f"{row['Edge']:+.1f}")
+        render_metric_row("Edge", format_edge_display(row["Edge"]))
         render_metric_row("Book", row["Sportsbook"] or "N/A")
         if row.get("Review"):
             render_metric_row("Review", row["Review"])
@@ -274,7 +282,7 @@ st.markdown(
     """
     <style>
     .block-container {
-        padding-top: 0.6rem;
+        padding-top: calc(env(safe-area-inset-top, 0px) + 1.1rem);
         padding-bottom: 4rem;
         max-width: 760px;
     }
@@ -283,7 +291,7 @@ st.markdown(
         padding-top: 0;
     }
     div[data-testid="stTabs"] {
-        margin-top: 0.25rem;
+        margin-top: 0.6rem;
     }
     div[data-testid="stHorizontalBlock"] {
         gap: 0.5rem;
@@ -310,8 +318,8 @@ if "session_odds_api_key" not in st.session_state:
 
 live_tab, single_game_tab, scanner_tab = st.tabs(["Today's Vibe Bets", "Single Game", "Scanner"])
 
-st.title("March Madness Betting Helper")
-st.write("Analyze a single game or scan the full board for the best betting opportunities.")
+st.markdown("## 🏀 March Madness Bets")
+st.caption("Quick picks — for fun only")
 
 with live_tab:
     render_section_intro("Today's Vibe Bets", "See the posted NCAAB board, rank the best edges, and decide fast.")
@@ -363,7 +371,7 @@ with live_tab:
         elif st.session_state["live_bets_df"].empty:
             st.warning("No posted NCAAB odds matched your current team names right now.")
         else:
-            top_live = st.session_state["live_bets_df"].head(5).reset_index(drop=True)
+            top_live = st.session_state["live_bets_df"].head(3).reset_index(drop=True)
             render_live_bet_card(top_live.iloc[0], hero=True)
             st.caption("Top card = strongest edge on the current posted board.")
             for _, row in top_live.iloc[1:].iterrows():
@@ -381,13 +389,17 @@ with live_tab:
 with single_game_tab:
     render_section_intro("Single Game", "Pick two teams, add a spread if you have one, and get a quick read.")
 
-    team1 = st.selectbox("Team 1", teams, index=0, key="single_game_team1")
-    team2 = st.selectbox("Team 2", teams, index=1 if len(teams) > 1 else 0, key="single_game_team2")
+    team_col1, team_col2 = st.columns(2)
+    with team_col1:
+        team1 = st.selectbox("Team 1", teams, index=0, key="single_game_team1")
+    with team_col2:
+        team2 = st.selectbox("Team 2", teams, index=1 if len(teams) > 1 else 0, key="single_game_team2")
 
     spread_input = st.text_input(
-        "Point spread for Team 1 (example: -1.5 if favored, +1.5 if underdog)",
+        "Spread (Team 1)",
         value="",
         key="single_game_spread_input",
+        placeholder="-1.5 or +1.5",
     )
 
     if st.button("Run Prediction", key="single_game_run_prediction"):
@@ -528,7 +540,7 @@ with scanner_tab:
                         render_top_list("Top 3 Underdog Spots", top_underdogs, "Recommendation")
 
                     st.subheader("Quick Picks")
-                    for _, row in results_df.head(8).iterrows():
+                    for _, row in results_df.head(3).iterrows():
                         render_scanner_card(row)
 
                     formatters = {
