@@ -164,18 +164,18 @@ def get_recommendation(model_prob: float, market_prob: float, spread: float | No
         abs_spread_edge = abs(spread_edge)
         extreme_underdog_mismatch = spread is not None and spread > 12 and model_prob < 0.35
 
-        if abs_spread_edge < 1.5:
+        if abs_spread_edge < 2.0:
             rec = "PASS"
-        elif abs_spread_edge < 3.0:
+        elif abs_spread_edge < 3.5:
             rec = "LEAN"
-        elif abs_spread_edge < 4.5:
+        elif abs_spread_edge < 5.0:
             rec = "BET"
         else:
-            rec = "STRONG BET"
-
-        if spread is not None and abs(spread) >= 12 and rec == "STRONG BET":
             rec = "BET"
-        if extreme_underdog_mismatch and rec == "STRONG BET":
+
+        if spread is not None and abs(spread) >= 12 and rec == "BET":
+            rec = "BET"
+        if extreme_underdog_mismatch and rec == "BET":
             rec = "BET"
 
         return rec, prob_edge
@@ -205,6 +205,7 @@ def analyze_matchup(team1_name: str, team2_name: str, spread: float | None = Non
     if spread is not None:
         market_prob = spread_to_market_prob(spread)
         spread_edge = get_spread_edge(projected_margin, spread)
+        spread_edge = max(min(spread_edge, 7), -7)
         recommendation, edge = get_recommendation(
             result["team1_prob"],
             market_prob,
